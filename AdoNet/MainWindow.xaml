@@ -1,0 +1,134 @@
+﻿<Window x:Class="AdoNet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdoNet"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                   Content="Status-Monitor" HorizontalAlignment="Center"
+                   FontSize="26" FontWeight="DemiBold"/>
+            <Label Grid.Column="0" Grid.Row="1"
+                   Content="Connection:" FontSize="20" />
+            <Label Grid.Column="1" Grid.Row="1"
+                   x:Name="StatusConnection" FontSize="20" />
+            <Label Grid.Column="0" Grid.Row="2"
+                   Content="Departments"  FontSize="20" />
+            <Label Grid.Column="1" Grid.Row="2"
+                   x:Name="StatusDepartments" FontSize="20" />
+            <Label Grid.Column="0" Grid.Row="3"
+                   Content="Products"  FontSize="20" />
+            <Label Grid.Column="1" Grid.Row="3"
+                   x:Name="StatusProducts" FontSize="20" />
+            <Label Grid.Column="0" Grid.Row="4"
+                   Content="Managers"  FontSize="20" />
+            <Label Grid.Column="1" Grid.Row="4"
+                   x:Name="StatusManagers" FontSize="20" />
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                   Content="Install Database" HorizontalAlignment="Center"
+                   FontSize="26" FontWeight="DemiBold"/>
+            <Button x:Name="CreateDepartments" Click="CreateDepartments_Click"
+                    Grid.Column="0" Grid.Row="1" >
+                <TextBlock TextAlignment="Center">
+                    Create<LineBreak/>Departments
+                </TextBlock>
+            </Button>
+            <Button x:Name="FillDepartments" Click="FillDepartments_Click"
+                    Grid.Column="1" Grid.Row="1">
+                <TextBlock TextAlignment="Center">
+                    Fill<LineBreak/>Departments
+                </TextBlock>
+            </Button>
+            <Button x:Name="CreateProducts" Click="CreateProducts_Click"
+                    Grid.Column="0" Grid.Row="2" >
+                <TextBlock TextAlignment="Center">
+                    Create<LineBreak/>Products
+                </TextBlock>
+            </Button>
+            <Button x:Name="FillProducts" Click="FillProducts_Click"
+                    Grid.Column="1" Grid.Row="2">
+                <TextBlock TextAlignment="Center">
+                    Fill<LineBreak/>Products
+                </TextBlock>
+            </Button>
+            <Button x:Name="CreateManagers" Click="CreateManagers_Click"
+                    Grid.Column="0" Grid.Row="3" >
+                <TextBlock TextAlignment="Center">
+                    Create<LineBreak/>Managers
+                </TextBlock>
+            </Button>
+            <Button x:Name="FillManagers" Click="FillManagers_Click"
+                    Grid.Column="1" Grid.Row="3">
+                <TextBlock TextAlignment="Center">
+                    Fill<LineBreak/>Managers
+                </TextBlock>
+            </Button>
+        </Grid>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+            <Label Content="Departments" HorizontalAlignment="Center"
+                   FontSize="26" FontWeight="DemiBold"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                          VerticalScrollBarVisibility="Visible"
+                          MaxWidth="265" MaxHeight="170">
+                <TextBlock x:Name="ViewDepartments" Padding="5"/>
+            </ScrollViewer>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+            <Label Content="Products" HorizontalAlignment="Center"
+                   FontSize="26" FontWeight="DemiBold"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                          VerticalScrollBarVisibility="Visible"
+                          MaxWidth="265" MaxHeight="170">
+                <TextBlock x:Name="ViewProducts" Padding="5"/>
+            </ScrollViewer>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="2">
+            <Label Content="Managers" HorizontalAlignment="Center"
+                   FontSize="26" FontWeight="DemiBold"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                          VerticalScrollBarVisibility="Visible"
+                          MaxWidth="265" MaxHeight="170">
+                <TextBlock x:Name="ViewManagers" Padding="5"/>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>
